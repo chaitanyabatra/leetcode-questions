@@ -9,7 +9,7 @@ class Solution:
         #         count+=1
         n=0
         aa=""
-        while len(aa)<=(len(b)+2*len(a)):
+        while len(aa)<=(2*len(b)+2*len(a)):
             if b in aa:
                 return n
             aa+=a
