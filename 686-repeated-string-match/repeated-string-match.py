@@ -7,13 +7,11 @@ class Solution:
         #     if a[i::]==b[:n-i+1]:
         #         #prefix true
         #         count+=1
-        q=len(b)//len(a)
-        r=len(b)%len(a)
-        if r:
-            q+=1
-        if b in (a*q):
-            return q
-        elif b in (a*(q+1)):
-            return (q+1)
-        else:
-            return -1
+        n=0
+        aa=""
+        while len(aa)<=(len(b)+2*len(a)):
+            if b in aa:
+                return n
+            aa+=a
+            n+=1
+        return -1
