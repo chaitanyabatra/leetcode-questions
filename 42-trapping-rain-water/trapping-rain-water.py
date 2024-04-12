@@ -19,7 +19,6 @@ class Solution(object):
         for i in range(n):
             water[i]=min(prefix[i],suffix[i])
             water[i]-=height[i]
-        print(water)
         return sum(water)
 
         
