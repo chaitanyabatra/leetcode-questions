@@ -12,11 +12,9 @@ class Solution(object):
             prefix[i]=max(maxprefix,height[i])
             maxprefix=prefix[i]
         maxsuffix=0
-        print(prefix)
         for i in range(n-1,-1,-1):
             suffix[i]=max(maxsuffix,height[i])
             maxsuffix=suffix[i]
-        print(suffix)
         water=[0]*n
         for i in range(n):
             water[i]=min(prefix[i],suffix[i])
