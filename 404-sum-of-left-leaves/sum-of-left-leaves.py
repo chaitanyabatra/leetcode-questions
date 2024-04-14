@@ -6,11 +6,21 @@
 #         self.right = right
 class Solution:
     def sumOfLeftLeaves(self, root: Optional[TreeNode]) -> int:
-        if not root:
-            return 0
+        
+
+
+
+
+
+
+
+        #recursion dfs preorder, break into left and right sub problems
+
+
+        if not root:return 0
+
 
         ans=0
-
         if root.left:
             if not root.left.left and not root.left.right:
                 ans+=root.left.val
