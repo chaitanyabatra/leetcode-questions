@@ -15,8 +15,6 @@ class Solution:
             if l<0:l=0
             if r<0:r=0
             self.maxsum=max(self.maxsum,l+r+node.val)
-            
-            
             return max(l,r)+node.val
         go(root)
         return self.maxsum
