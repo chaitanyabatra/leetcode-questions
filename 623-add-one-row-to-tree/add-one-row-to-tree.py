@@ -15,22 +15,13 @@ class Solution:
         depth-=2
         while q and depth:
             l=len(q)
-
             for i in range(l):
                 node=q.popleft()
-
-
-                if node.left:
-                    q.append(node.left)
-
-                if node.right:
-                    q.append(node.right)
-            
+                if node.left:q.append(node.left)
+                if node.right:q.append(node.right)
             depth-=1
- 
         while q:
             node=q.popleft()
-
             if True:
                 tempnode=TreeNode(val)
                 tempnode.left=node.left
