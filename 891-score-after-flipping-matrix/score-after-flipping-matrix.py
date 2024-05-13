@@ -1,18 +1,25 @@
 class Solution:
     def matrixScore(self, grid: List[List[int]]) -> int:
-        n, m= len(grid), len(grid[0])
-        col1=[0]*m
-        sum=0
-        for row in grid:
-            x=0
-            one=False
-            for i, b in enumerate(row):
-                one=(row[0]==0)^(b==1)
-                x=(x<<1)+one
-                col1[i]+=one
-            sum+=x
-        for i in range(m):
-            if col1[i]<=n//2:
-                sum+=(1<<(m-1-i))*(n-2*col1[i])
-        return sum
-        
+
+        rows,cols = len(grid),len(grid[0])
+        for r in range(rows):
+            if grid[r][0] == 0:
+                for c in range(cols):
+                    if grid[r][c] == 0:
+                        grid[r][c] = 1
+                    else:
+                        grid[r][c] = 0
+
+        counts = collections.defaultdict(int)
+        for c in range(1,cols):
+            for r in range(rows):
+                if grid[r][c] == 0:
+                    counts[c] += 1
+
+        res = rows * (2**(cols-1))
+        for c in range(1,cols):
+            res += max(counts[c],rows - counts[c])*2**(cols - c - 1)
+
+        return res
+
+            
