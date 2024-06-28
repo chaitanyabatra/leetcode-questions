@@ -1,16 +1,12 @@
 class Solution:
     def rob(self, nums: List[int]) -> int:
-        def f(n,dp):
-            if dp[n]!=-1:return dp[n]
-            if n==0:
-                return 0
-            if n<0:
-                return 0
-            pick= nums[n-1]+f(n-2,dp)#n-1 in nums as it has 0 indexing while f has 1 indexing
-            not_pick=f(n-1,dp)+0
-
-            dp[n]=max(pick,not_pick)
-            return dp[n]
         n=len(nums)
         dp=[-1]*(n+1)
-        return f(n,dp)
+        dp[0]=0
+        for i in range(1,n+1):
+            pick=nums[i-1]+dp[i-2] if i>1 else nums[i-1]
+            not_pick=dp[i-1]
+            dp[i]=max(pick,not_pick)
+        return dp[n]
+
+        
