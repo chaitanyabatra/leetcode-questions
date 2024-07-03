@@ -1,6 +1,7 @@
 class Solution:
     def minDifference(self, a: List[int]) -> int:
 
+        
         if len(a)<=4:
             return 0
         a.sort()
