@@ -3,7 +3,7 @@ class Solution:
         if len(connections) < n-1: return -1
 
         parent = [i for i in range(n)]
-        rank = [0] * (n)
+        size = [1] * (n)
 
         def find(x):
             if parent[x] != x:
@@ -14,13 +14,12 @@ class Solution:
             p1, p2 = find(x), find(y)
             if p1 == p2: return
 
-            if rank[p1] > rank[p2]:
+            if size[p1] > size[p2]:
                 parent[p2] = p1
-            elif rank[p2]>rank[p1]:
-                parent[p1] = p2
+                size[p1]+=size[p2]
             else:
                 parent[p1]=p2
-                rank[p2]+=1
+                size[p2]+=size[p1]
         
         unconnected = n-1
         for a,b in connections:
