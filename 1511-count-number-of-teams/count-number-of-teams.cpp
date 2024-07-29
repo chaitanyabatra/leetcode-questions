@@ -13,6 +13,9 @@ static int fastIO = []{
 class Solution {
 public:
     int numTeams(vector<int>& rating) {
+        ios_base::sync_with_stdio(false);
+        cin.tie(0);
+        cout.tie(0);
         int n = rating.size();
         if (n < 3) return 0;
         
