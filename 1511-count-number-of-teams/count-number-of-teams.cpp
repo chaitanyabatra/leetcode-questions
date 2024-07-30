@@ -1,38 +1,24 @@
-#include <iostream>
-#include <vector>
-
-using namespace std;
-
+#define intt long long
 class Solution {
 public:
     int numTeams(vector<int>& rating) {
-        ios_base::sync_with_stdio(false);
-        cin.tie(0);
-        cout.tie(0);
-        int n = rating.size();
-        if (n < 3) return 0;
-        
-        int count = 0;
-        for (int i = 0; i < n; ++i) {
-            int leftSmaller = 0, leftLarger = 0;
-            int rightSmaller = 0, rightLarger = 0;
-            
-            // Count elements smaller and larger than rating[i] on the left
-            for (int j = 0; j < i; ++j) {
-                if (rating[j] < rating[i]) leftSmaller++;
-                if (rating[j] > rating[i]) leftLarger++;
+        intt n=rating.size();
+        intt count=0;
+        for(intt i=1;i<n-1;i++){
+            intt leftgreater=0;
+            intt leftsmaller=0;
+            for (intt j=0;j<i;j++){
+                if (rating[j]>rating[i]) leftgreater++;
+                if (rating[j]<rating[i]) leftsmaller++;
             }
-            
-            // Count elements smaller and larger than rating[i] on the right
-            for (int k = i + 1; k < n; ++k) {
-                if (rating[k] < rating[i]) rightSmaller++;
-                if (rating[k] > rating[i]) rightLarger++;
+            intt rightgreater=0;
+            intt rightsmaller=0;
+            for (intt k=i+1;k<n;k++){
+                if (rating[k]>rating[i]) rightgreater++;
+                if (rating[k]<rating[i]) rightsmaller++;
             }
-            
-            // Calculate valid teams
-            count += leftSmaller * rightLarger + leftLarger * rightSmaller;
+            count=count+leftgreater*rightsmaller+leftsmaller*rightgreater;
         }
-        
         return count;
-    }
+   }
 };
