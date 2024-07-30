@@ -2,6 +2,10 @@
 class Solution {
 public:
     int numTeams(vector<int>& rating) {
+        ios_base::sync_with_stdio(false);
+        cin.tie(0);
+        cout.tie(0);
+
         intt n=rating.size();
         intt count=0;
         for(intt i=1;i<n-1;i++){
