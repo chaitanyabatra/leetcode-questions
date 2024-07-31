@@ -7,9 +7,7 @@ public:
         int n=books.size();
         vector<int> cache(n,-1);
         function<int(int)> go = [&](int i) {
-            ios_base::sync_with_stdio(false);
-            cin.tie(0);
-            cout.tie(0);
+            
             if (i==n) return 0;
             if (cache[i]!=-1) return cache[i];
             int currwidth=shelfWidth;
