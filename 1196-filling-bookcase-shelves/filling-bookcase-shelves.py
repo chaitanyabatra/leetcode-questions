@@ -17,6 +17,6 @@ class Solution(object):
                 currwidth-=width
                 maxheight=max(height,maxheight)
                 minheight=min(minheight,go(j+1)+maxheight)
-                cache[i]=minheight
+            cache[i]=minheight
             return minheight
         return go(0)
