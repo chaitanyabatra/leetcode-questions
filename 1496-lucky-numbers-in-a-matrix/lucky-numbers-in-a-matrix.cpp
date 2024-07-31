@@ -1,9 +1,9 @@
 class Solution {
 public:
     vector<int> luckyNumbers (vector<vector<int>>& matrix) {
-        ios_base::sync_with_stdio(false);
-        cin.tie(0);
-        cout.tie(0);
+        // ios_base::sync_with_stdio(false);
+        // cin.tie(0);
+        // cout.tie(0);
         long long n=matrix.size();
         long long m=matrix[0].size();
         vector<int> minrow(n,1000000);
