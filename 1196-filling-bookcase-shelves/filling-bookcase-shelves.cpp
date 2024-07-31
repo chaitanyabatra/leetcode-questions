@@ -1,6 +1,9 @@
 class Solution {
 public:
     int minHeightShelves(vector<vector<int>>& books, int shelfWidth) {
+        ios_base::sync_with_stdio(false);
+        cin.tie(0);
+        cout.tie(0);
         int n=books.size();
         vector<int> cache(n,-1);
         function<int(int)> go = [&](int i) {
