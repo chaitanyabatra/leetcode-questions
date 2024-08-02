@@ -1,6 +1,9 @@
 class Solution {
 public:
     int nonSpecialCount(int l, int r) {
+        ios_base::sync_with_stdio(false);
+        cin.tie(0);
+        cout.tie(0);
         int total=r-l+1;
         int n=ceil(sqrt(r))+1;
         vector<int> sieve(n,true);
