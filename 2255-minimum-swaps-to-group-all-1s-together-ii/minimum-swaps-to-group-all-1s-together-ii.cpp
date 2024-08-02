@@ -3,6 +3,7 @@ public:
     int minSwaps(vector<int>& nums) {
         ios_base::sync_with_stdio(false);
         cin.tie(0);
+        cout.tie(0);
         int n=nums.size();
         int total=accumulate(nums.begin(), nums.end(), 0);
         int ans=total;
