@@ -11,10 +11,10 @@ public:
         for (int r=0;r<row;r++){
             for (int c=0;c<col;c++){
                 if (grid[r][c]==1){
-                    if ((r == 0) || (grid[r - 1][c] == 0)) edge++;
-                    if ((r == (row - 1)) || (grid[r + 1][c] == 0)) edge++;
-                    if ((c == 0) || (grid[r][c - 1] == 0)) edge++;
-                    if ((c == (col - 1)) || (grid[r][c + 1] == 0)) edge++;
+                    if ((r == 0) || (grid[r - 1][c] == 0)) edge+=2;
+                    //if ((r == (row - 1)) || (grid[r + 1][c] == 0)) edge++;
+                    if ((c == 0) || (grid[r][c - 1] == 0)) edge+=2;
+                    //if ((c == (col - 1)) || (grid[r][c + 1] == 0)) edge++;
                 }
             }
         }
