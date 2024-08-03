@@ -1,12 +1,12 @@
 class Solution {
 public:
     int hammingDistance(int x, int y) {
-        x=x^y;
-        y=0;
-        while(x){
-            if(x & true) y++;
-            x>>=1;
+        int result = x^y;
+        int answer=0;
+        while(result>0){
+            answer+=result&1;
+            result>>=1;
         }
-        return y;
+        return answer;
     }
 };
